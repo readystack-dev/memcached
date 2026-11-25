@@ -1,0 +1,81 @@
+{
+  "apt_refresh": [
+    {
+      "min_version": "2.39-0ubuntu8.12",
+      "package": "libc6",
+      "reason": "UBUNTU-CVE-2026-84243: libc6 2.39-0ubuntu8.9 -> 2.39-0ubuntu8.12"
+    }
+  ],
+  "build_method": "source-rebuild-c",
+  "chain_id": 1132,
+  "dep_bumps": [],
+  "expected_residuals": [],
+  "images": [
+    {
+      "digest": "sha256:9c7f200c07e3d4a03e7249d2c16bf66a51120fb876aa2242cf31451412543289",
+      "ref": "ubuntu:24.04",
+      "role": "builder"
+    },
+    {
+      "digest": "sha256:9c7f200c07e3d4a03e7249d2c16bf66a51120fb876aa2242cf31451412543289",
+      "ref": "ubuntu:24.04",
+      "role": "offline_builder"
+    },
+    {
+      "digest": "sha256:9c7f200c07e3d4a03e7249d2c16bf66a51120fb876aa2242cf31451412543289",
+      "ref": "ubuntu:24.04",
+      "role": "base"
+    }
+  ],
+  "mod_replaces": [],
+  "runtime_base": {
+    "kind": "chisel",
+    "provides": [
+      "memcached"
+    ],
+    "shell": true,
+    "slices": [
+      "libevent-2.1-7t64_libs",
+      "libssl3t64_libs"
+    ],
+    "tools": [
+      "bash",
+      "grep",
+      "id"
+    ]
+  },
+  "schema": "kitforge.toolchain_lock.v1",
+  "slug": "memcached",
+  "source": {
+    "build_cmds": [
+      "./configure --prefix=/opt/memcached --enable-tls",
+      "make -j\"$(nproc)\"",
+      "make install",
+      "/opt/memcached/bin/memcached -V | grep -qx 'memcached 1.6.45'"
+    ],
+    "build_packages": [
+      "build-essential",
+      "autoconf",
+      "automake",
+      "pkg-config",
+      "libevent-dev",
+      "libssl-dev",
+      "ca-certificates"
+    ],
+    "build_system": "make",
+    "builder_image": "ubuntu:24.04",
+    "commit": "2d51e364799bc9698bd4b11728ea978cea12da6e",
+    "commit_epoch": 1783656714,
+    "install_prefix": "/opt/memcached",
+    "ref": "1.6.45",
+    "repo": "https://github.com/memcached/memcached",
+    "source_date_epoch": 1795161105,
+    "source_date_epoch_basis": "release-cut",
+    "source_date_epoch_provenance": "the time release 1.6.45-CE-ubuntu24.04-r6 was cut (2026-11-20T07:51:45Z), by scripts/retarget.py --rev-bump: ReadyStack dates an image by when its release was packaged (owner 2026-11-10), recorded here once and used by every rebuild of the release; it builds upstream commit 2d51e364799b, dated 2026-07-10T04:11:54Z (source.commit_epoch).",
+    "source_prep": [
+      "./autogen.sh && grep -qx 'm4_define(\\[VERSION_NUMBER\\], \\[1.6.45\\])' version.m4"
+    ],
+    "vendored_deps": true
+  },
+  "version": "1.6.45"
+}

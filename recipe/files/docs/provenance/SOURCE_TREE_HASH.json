@@ -1,0 +1,9 @@
+{
+  "schema": "kitforge.source_tree_hash.v1",
+  "slug": "memcached",
+  "repo": "https://github.com/memcached/memcached",
+  "ref": "1.6.45",
+  "commit": "2d51e364799bc9698bd4b11728ea978cea12da6e",
+  "tree_listing_sha256": "cc6ca5f8604f9aa54acb9b32dfdcdcadd0413aa8b92c95f9fdfec3b1ab6349b1",
+  "file_count": 327
+}

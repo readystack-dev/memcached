@@ -1,0 +1,7 @@
+image_manifest_digest=sha256:58c67345f1bae3660c5b9b93872a8eb93b4bf4bacbc1da5f531aefc0626b00ee
+config_digest=sha256:b8dbfbe351ac8895e8c802ef941d7727db91bf1bdd7d8ec8a4bd93e338e24add
+tag=readystack/memcached:1.6.45-CE-ubuntu24.04-r6
+probe_port=11211
+probe_path=/
+probe_timeout=180
+probe_exec=bash -c 'exec 3<>/dev/tcp/127.0.0.1/11211 && printf "version\r\n" >&3 && IFS= read -r -t 5 l <&3 && case "$l" in VERSION*) exit 0;; esac; exit 1'

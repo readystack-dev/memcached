@@ -1,0 +1,292 @@
+{
+ "schema": "readystack.recipe.v1",
+ "slug": "memcached",
+ "tag": "1.6.45-CE-ubuntu24.04-r6",
+ "tarball": "ReadyStack-memcached-1.6.45-CE-ubuntu24.04-r6.tar.gz",
+ "tarball_sha256": "7de36ce73e101e37a8bd09e4093f9607448c9b454f960c99219a1268710e6b38",
+ "kit_root": "1.6.45-CE-ubuntu24.04-r6",
+ "generated_at": "2026-11-20T08:43:47Z",
+ "generator": "KitForge release/recipe_publish.py",
+ "dockerfile": "Dockerfile.offline.pinned",
+ "build_script": "BUILD_OFFLINE.sh",
+ "preview_lines": 24,
+ "pins": {
+  "upstream": {
+   "repo": "https://github.com/memcached/memcached",
+   "ref": "1.6.45",
+   "commit": "2d51e364799bc9698bd4b11728ea978cea12da6e",
+   "url": "https://github.com/memcached/memcached/tree/2d51e364799bc9698bd4b11728ea978cea12da6e",
+   "from": "docs/provenance/BUILD_RECIPE.json"
+  },
+  "fetches": [
+   {
+    "kind": "git",
+    "url": "https://github.com/memcached/memcached",
+    "ref": "1.6.45"
+   },
+   {
+    "kind": "http",
+    "url": "https://github.com/canonical/chisel/releases/download/v1.5.1/chisel_v1.5.1_linux_amd64.tar.gz"
+   },
+   {
+    "kind": "http",
+    "url": "https://github.com/canonical/chisel-releases/archive/f2600d3aa90123db6d44bb1441a99afc8b5847d9.tar.gz"
+   }
+  ],
+  "bases": [
+   {
+    "ref": "golang:1.27.3-bookworm@sha256:972b4110ba0f47539a975c31e52c64765e1ff19f2d74469ae4a595c6676e80a5",
+    "image": "golang:1.27.3-bookworm",
+    "digest": "sha256:972b4110ba0f47539a975c31e52c64765e1ff19f2d74469ae4a595c6676e80a5"
+   },
+   {
+    "ref": "ubuntu:24.04@sha256:9c7f200c07e3d4a03e7249d2c16bf66a51120fb876aa2242cf31451412543289",
+    "image": "ubuntu:24.04",
+    "digest": "sha256:9c7f200c07e3d4a03e7249d2c16bf66a51120fb876aa2242cf31451412543289"
+   }
+  ],
+  "toolchain": {
+   "buildkit": "moby/buildkit:v0.31.2",
+   "buildkit_image_digest": "sha256:e0e67ea9c4bb07bdef683e29f70f3b623d1eb9c82274a9ec04e6bb0511449fb0",
+   "builder_images": [
+    "ubuntu:24.04@sha256:9c7f200c07e3d4a03e7249d2c16bf66a51120fb876aa2242cf31451412543289"
+   ]
+  },
+  "build_method": "source-rebuild-c",
+  "source_date_epoch": 1795161105,
+  "source_date_epoch_utc": "2026-11-20T07:51:45Z",
+  "target": {
+   "image_manifest_digest": "sha256:58c67345f1bae3660c5b9b93872a8eb93b4bf4bacbc1da5f531aefc0626b00ee",
+   "config_digest": "sha256:b8dbfbe351ac8895e8c802ef941d7727db91bf1bdd7d8ec8a4bd93e338e24add",
+   "image": "readystack/memcached:1.6.45-CE-ubuntu24.04-r6"
+  },
+  "checksummed_files": 866
+ },
+ "files": [
+  {
+   "path": "BASES.tsv",
+   "size": 262,
+   "sha256": "c74d67688b6c48929450c3d8707c9b162330e8ed3c6d8eedde41f239185b20f2",
+   "lines": 2,
+   "public": "full"
+  },
+  {
+   "path": "BUILD_OFFLINE.sh",
+   "size": 8856,
+   "sha256": "6ab4f08a6ec775b32d854f03413b30ecfe555ddba78cf0de956235f5a2a39542",
+   "lines": 162,
+   "public": "preview",
+   "preview_lines": 24
+  },
+  {
+   "path": "CHECKSUMS.sha256",
+   "size": 97470,
+   "sha256": "b0c4239a58736f6204d867cff2ed837f9bb08f66e7ff0dfebf1e09908b4a5bfb",
+   "lines": 866,
+   "public": "account"
+  },
+  {
+   "path": "DOCKERFILE_NAME.txt",
+   "size": 26,
+   "sha256": "9aadd1ede68e016a6f163c97befc5ff2fcdc8ebd4f84b108dba63cb195fa8c84",
+   "lines": 1,
+   "public": "full"
+  },
+  {
+   "path": "Dockerfile",
+   "size": 5349,
+   "sha256": "be81a2e1d61901fda99e1a0dfe51af9e26a4b676d4c2a9341d6ebf8ea26fb80d",
+   "lines": 74,
+   "public": "account"
+  },
+  {
+   "path": "Dockerfile.offline",
+   "size": 5349,
+   "sha256": "be81a2e1d61901fda99e1a0dfe51af9e26a4b676d4c2a9341d6ebf8ea26fb80d",
+   "lines": 74,
+   "public": "account"
+  },
+  {
+   "path": "Dockerfile.offline.pinned",
+   "size": 5349,
+   "sha256": "be81a2e1d61901fda99e1a0dfe51af9e26a4b676d4c2a9341d6ebf8ea26fb80d",
+   "lines": 74,
+   "public": "preview",
+   "preview_lines": 24
+  },
+  {
+   "path": "Dockerfile.vendor",
+   "size": 6262,
+   "sha256": "527ea9886b32d0f1fba5acb4e66f8448611ec18b48171e45b1408427982b5ac5",
+   "lines": 53,
+   "public": "account"
+  },
+  {
+   "path": "FILE_MODES.tsv",
+   "size": 44340,
+   "sha256": "c468271895cb4174c022bd596a50db45064ef329c72360a2a82615e1da3bf434",
+   "lines": 929,
+   "public": "account"
+  },
+  {
+   "path": "MANIFEST.txt",
+   "size": 38612,
+   "sha256": "a69539c03a175a8369255862f0e0d56a1236bf0fc112005f81b0ee1f8b426cdf",
+   "lines": 868,
+   "public": "account"
+  },
+  {
+   "path": "README.md",
+   "size": 3304,
+   "sha256": "731e1667a6a67eff69bf3275eb2aa6edc6da1f517a117885cbfaa1be02974b0d",
+   "lines": 39,
+   "public": "account"
+  },
+  {
+   "path": "SOURCE_DATE_EPOCH.txt",
+   "size": 11,
+   "sha256": "601ff2833d50033225bab2437881e69b925439ea18fe2eca1dc6ae1b25c3211c",
+   "lines": 1,
+   "public": "full"
+  },
+  {
+   "path": "TARGET_DIGEST.txt",
+   "size": 435,
+   "sha256": "96a6080afc3a812b9b062b2f569e151e9ef7df00f258ec2b5680156bccf5a895",
+   "lines": 7,
+   "public": "full"
+  },
+  {
+   "path": "VERIFY_OFFLINE.sh",
+   "size": 10153,
+   "sha256": "3e8184ea230cfd8f41f977e26be6bf7bd03112c396c517837ce0c7de4f7399dd",
+   "lines": 165,
+   "public": "account"
+  },
+  {
+   "path": "docs/PROVENANCE.md",
+   "size": 2631,
+   "sha256": "cd455458a2647d4aa50f07db1d85cd515d75b815696e076d47dae8c25c1373ca",
+   "lines": 36,
+   "public": "account"
+  },
+  {
+   "path": "docs/REBUILD.md",
+   "size": 6120,
+   "sha256": "4f8e7d91b9fc4347188c14bda885ca27124379865e5b1ffd848bff0f8e90622b",
+   "lines": 60,
+   "public": "account"
+  },
+  {
+   "path": "docs/VERIFY.md",
+   "size": 2039,
+   "sha256": "5019c9a3443ba2c9602fe0855660d628e673a694bf5f55f72f1eacece4a371b7",
+   "lines": 34,
+   "public": "account"
+  },
+  {
+   "path": "docs/provenance/BASE_IMAGE_DIGESTS.lock",
+   "size": 64,
+   "sha256": "9255886f11649f4cd2ce9ca05de9a33c89d9de183765ae4ab7419805b13691f2",
+   "lines": 2,
+   "public": "full"
+  },
+  {
+   "path": "docs/provenance/BUILD_RECIPE.json",
+   "size": 3080,
+   "sha256": "269cf4abd3b77b566072e560fe224e03315685ce9741db5e2dc3a1846203747e",
+   "lines": 73,
+   "public": "account"
+  },
+  {
+   "path": "docs/provenance/CUSTODY_INPUTS.json",
+   "size": 653,
+   "sha256": "aaa04f1c5fd3e54a00838696adead8699b96056883ba6ce8a08d9015227ff9e9",
+   "lines": 17,
+   "public": "account"
+  },
+  {
+   "path": "docs/provenance/SOURCE_FILE_MANIFEST.json",
+   "size": 7670,
+   "sha256": "0917312c20e57461fecbd2003da5e788aa911ef7d18964fe7453a1862aeca863",
+   "lines": 334,
+   "public": "account"
+  },
+  {
+   "path": "docs/provenance/SOURCE_TREE_HASH.json",
+   "size": 310,
+   "sha256": "8737a7c044d26062f7917fb705d7c201d741cd53d0427343f9d49fac66d71219",
+   "lines": 9,
+   "public": "full"
+  },
+  {
+   "path": "docs/provenance/SYSTEM_PINNING.lock",
+   "size": 519,
+   "sha256": "afb475d5a0d88d116f90f43f9d3677696a3ecf2fe4b892facd98fb7e0e0f3d1d",
+   "lines": 16,
+   "public": "account"
+  },
+  {
+   "path": "docs/provenance/TOOLCHAIN.lock",
+   "size": 2425,
+   "sha256": "3a79f04f7b37e815d0d4f8b13e9de0a41fea30ea515be1a3e76fe83803cef006",
+   "lines": 81,
+   "public": "account"
+  },
+  {
+   "path": "readystack-entrypoint.sh",
+   "size": 276,
+   "sha256": "bc7b4cf3bbcb2d1c892ea29d09bec5c31603367957be6b9557380bbce5817324",
+   "lines": 8,
+   "public": "account"
+  },
+  {
+   "path": "rebuild.json",
+   "size": 1576,
+   "sha256": "d02c6d2a6d76641ab4ae3e2dec902c47c8d146ebc8f345866bfcdbca3ba0ef40",
+   "lines": 38,
+   "public": "account"
+  },
+  {
+   "path": "rs-probe.go",
+   "size": 3179,
+   "sha256": "a8bdee17a3581f8685f58d7a8ccb7524153829f70b19c9d75e323c589de2ad8f",
+   "lines": 117,
+   "public": "account"
+  },
+  {
+   "path": "rs-probe.mod",
+   "size": 40,
+   "sha256": "a480b79acf98e4275725058076ad2a8684a2eee06c27f4337b75339c198ca92d",
+   "lines": 3,
+   "public": "account"
+  },
+  {
+   "path": "toolchain/BUILDKIT_TAG.txt",
+   "size": 22,
+   "sha256": "fcd530eeb02b063d2f047adad6eef896422a8e8d558513e5f09b2a262be32573",
+   "lines": 1,
+   "public": "full"
+  }
+ ],
+ "skipped": [],
+ "kit_adds": {
+  "bases": {
+   "files": 16,
+   "bytes": 330407104
+  },
+  "docs": {
+   "files": 389,
+   "bytes": 3859327
+  },
+  "toolchain": {
+   "files": 1,
+   "bytes": 111529472
+  },
+  "vendored": {
+   "files": 433,
+   "bytes": 121807350
+  }
+ },
+ "redacted_files": 0
+}
